@@ -7,7 +7,7 @@
 normal makes with the inferred gravity direction.  
 > This is explained in this paper (https://people.eecs.berkeley.edu/~sgupta/pdf/rcnn-depth.pdf).  
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)  
+![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/depthsegnet.png)  
 
 
 > This network takes as input a RGB+HHA image and starts training  
