@@ -1,28 +1,41 @@
+#
+#
+# Harshit Sikchi
+# RGBD Image segmentation using Segnet
+# Data tools
+#
+
 import numpy as np
-#import deepdish as dd
 import lmdb
 import caffe
 import glob
 import random
-import tifffile
 from scipy import misc
 
-fdata = glob.glob("/home/harshit/work/fast-rcnn/data/nyud2/data/images/*.png") #Change the path here to point to your RGB images
-n_data = len(fdata)
+fdataRGB = glob.glob("/home/harshit/work/fast-rcnn/data/nyud2/data/images/*.png") #Change the path here to point to your RGB images
+fdataHHA=glob.glob("/home/harshit/work/fast-rcnn/data/nyud2/data/hha/*.png") #Change the path here to point to ur HHA images
+flabel = glob.glob("/home/harshit/work/fast-rcnn/data/nyud2/benchmarkData/groundTruth/*.png") # Change the path to point to your segmentation masks
+
+fdataRGB =sorted(fdataRGB)
+fdataHHA = sorted(fdataHHA)
+flabel = sorted(flabel)
+
+
+n_data = len(fdataRGB)
 print(n_data)
 final_data = np.zeros((n_data,256,256,6))
 
-fdata1=glob.glob("/home/harshit/work/fast-rcnn/data/nyud2/data/hha/*.png") #Change the path here to point to ur HHA images
 
-for k in range (len(fdata)):
-    fcurrent = fdata[k]
+
+for k in range (len(fdataRGB)):
+    fcurrent = fdataRGB[k]
     img = misc.imread(fcurrent)
     img=  misc.imresize(img,(256,256,3))
     img = img.reshape(1,256,256,3)   
     final_data[k,:,:,0:3] = img
 
-for k in range (len(fdata1)):
-    fcurrent = fdata1[k]
+for k in range (len(fdataHHA)):
+    fcurrent = fdataHHA[k]
     img = misc.imread(fcurrent)
     img = misc.imresize(img, (256,256,3))
     img = img.reshape(1,256,256,3)   
@@ -40,7 +53,6 @@ print 'data shape : ',data.shape
 
 #creates a numpy array of label Y
 
-flabel = glob.glob("/home/harshit/work/fast-rcnn/data/nyud2/benchmarkData/groundTruth/*.png") # Change the path to point to your segmentation masks
 n_label = len(flabel)
 final_label = np.zeros((n_label,256,256,1))
 

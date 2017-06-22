@@ -1,18 +1,11 @@
-# 
-# Harshit Sikchi
-# IIT Kharagpur
-# 20/06/2017
-#
-
-name: "Segnet_Depth"
-
+name: "VGG_ILSVRC_16_layer"
 layer {
   name: "data"
   type: "Data"
   top: "data"
   data_param {
-    source: "data_lmdb"	  # Change this to the absolute path to your data_lmdb
-    batch_size: 1   			# Change this number to a batch size that will fit on your GPU
+    source: "data_lmdb"   # Change this to the absolute path to your data_lmdb
+    batch_size: 1         # Change this number to a batch size that will fit on your GPU
     backend: LMDB
   }
 }
@@ -22,8 +15,8 @@ layer {
   type: "Data"
   top: "label"
   data_param {
-    source: "labels"	    # Change this to the absolute path to labels
-    batch_size: 1  			# Change this number to a batch size that will fit on your GPU
+    source: "labels"      # Change this to the absolute path to labels
+    batch_size: 1       # Change this number to a batch size that will fit on your GPU
     backend: data_lmdb
   }
 }
@@ -66,6 +59,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -121,6 +115,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -188,6 +183,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -243,6 +239,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -310,6 +307,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -365,6 +363,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -420,6 +419,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -487,6 +487,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -542,6 +543,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -597,6 +599,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -664,6 +667,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -719,6 +723,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -774,6 +779,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -810,8 +816,8 @@ layer {
   bottom: "pool5_mask"
   upsample_param {
     scale: 2
-    upsample_w: 16
-    upsample_h: 16
+    upsample_w: 30
+    upsample_h: 23
   }
 }
 layer {
@@ -853,6 +859,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -909,6 +916,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -964,6 +972,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -988,8 +997,8 @@ layer {
   bottom: "pool4_mask"
   upsample_param {
     scale: 2
-    upsample_w: 32
-    upsample_h: 32
+    upsample_w: 60
+    upsample_h: 45
   }
 }
 layer {
@@ -1031,6 +1040,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1086,6 +1096,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1141,6 +1152,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1206,6 +1218,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1261,6 +1274,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1316,6 +1330,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1381,6 +1396,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1436,6 +1452,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1501,6 +1518,7 @@ layer {
     decay_mult: 0
   }
   bn_param {
+	bn_mode: INFERENCE
 	scale_filler {
 	  type: "constant"
 	  value: 1
@@ -1537,28 +1555,15 @@ layer {
     bias_filler {
       type: "constant"
     }
-    num_output: 2 # Change this value to the number of categories you want
+    num_output: 11
     pad: 1
     kernel_size: 3
   }
 }
 layer {
-  name: "loss"
-  type: "SoftmaxWithLoss"
+  name: "prob"
+  type: "Softmax"
   bottom: "conv1_1_D"
-  bottom: "label"
-  top: "loss"
-  loss_param: {
-    weight_by_label_freqs: true # The weighting is followed as given in Segnet paper
-    class_weighting: 0.5
-    class_weighting: 0.5
-  }
-}
-layer {
-  name: "accuracy"
-  type: "Accuracy"
-  bottom: "conv1_1_D"
-  bottom: "label"
-  top: "accuracy"
-  top: "per_class_accuracy"
+  top: "prob"
+  softmax_param {engine: CAFFE}
 }
