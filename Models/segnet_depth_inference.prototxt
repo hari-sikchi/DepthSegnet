@@ -4,22 +4,23 @@ layer {
   type: "Data"
   top: "data"
   data_param {
-    source: "data_lmdb"   # Change this to the absolute path to your data_lmdb
+    source: "/home/harshit/work/SegNet-Tutorial/data/data_lmdb" # Change this to the absolute path to your 
     batch_size: 1         # Change this number to a batch size that will fit on your GPU
     backend: LMDB
   }
 }
-
 layer {
   name: "data"
   type: "Data"
   top: "label"
   data_param {
-    source: "labels"      # Change this to the absolute path to labels
+    source: "/home/harshit/work/SegNet-Tutorial/data/labels"  # Change this to the absolute path to 
     batch_size: 1       # Change this number to a batch size that will fit on your GPU
-    backend: data_lmdb
+    backend: LMDB
   }
 }
+
+
 layer {
   bottom: "data"
   top: "conv1_1"
@@ -59,15 +60,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -115,15 +116,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -183,15 +184,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -239,15 +240,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -307,15 +308,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -363,15 +364,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -419,15 +420,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -487,15 +488,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -543,15 +544,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -599,15 +600,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -667,15 +668,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -723,15 +724,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -779,15 +780,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -816,8 +817,8 @@ layer {
   bottom: "pool5_mask"
   upsample_param {
     scale: 2
-    upsample_w: 30
-    upsample_h: 23
+    upsample_w: 16
+    upsample_h: 16
   }
 }
 layer {
@@ -859,15 +860,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -916,15 +917,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -972,15 +973,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -997,8 +998,8 @@ layer {
   bottom: "pool4_mask"
   upsample_param {
     scale: 2
-    upsample_w: 60
-    upsample_h: 45
+    upsample_w: 32
+    upsample_h: 32
   }
 }
 layer {
@@ -1040,15 +1041,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1096,15 +1097,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1152,15 +1153,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1218,15 +1219,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1274,15 +1275,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1330,15 +1331,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1396,15 +1397,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1452,15 +1453,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1518,15 +1519,15 @@ layer {
     decay_mult: 0
   }
   bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
+  bn_mode: INFERENCE
+  scale_filler {
+    type: "constant"
+    value: 1
+  }
+  shift_filler {
+    type: "constant"
+    value: 0.001
+  }
  }
 }
 layer {
@@ -1555,7 +1556,7 @@ layer {
     bias_filler {
       type: "constant"
     }
-    num_output: 11
+    num_output: 26
     pad: 1
     kernel_size: 3
   }

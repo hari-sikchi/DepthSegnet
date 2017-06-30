@@ -3,6 +3,7 @@ import os
 import numpy as np
 from skimage.io import ImageCollection
 from argparse import ArgumentParser
+import lmdb
 
 
 
@@ -16,21 +17,9 @@ from caffe.proto import caffe_pb2
 from google.protobuf import text_format
 
 
-def extract_dataset(net_message):
-    assert net_message.layer[0].type == "DenseImageData"
-    source = net_message.layer[0].dense_image_data_param.source
-    with open(source) as f:
-        data = f.read().split()
-    print data
-    ims = ImageCollection(data[::2])
-    labs = ImageCollection(data[1::2])
-    assert len(ims) == len(labs) > 0
-    return ims, labs
-
 
 def make_testable(train_model_path):
     # load the train net prototxt as a protobuf message
-    print "hello"
     with open(train_model_path) as f:
         train_str = f.read()
     train_net = caffe_pb2.NetParameter()
@@ -38,7 +27,8 @@ def make_testable(train_model_path):
 
     # add the mean, var top blobs to all BN layers
     for layer in train_net.layer:
-    	print(len(layer.top))
+        #print layer.type 
+        #print type(layer.top)
         if layer.type == "BN" and len(layer.top) == 1:
             layer.top.append(layer.top[0] + "-mean")
             layer.top.append(layer.top[0] + "-var")
@@ -131,7 +121,7 @@ def make_test_files(testable_net_path, train_weights_path, num_iterations,
         test_msg.layer.remove(data_layer)
     test_msg.input.append("data")
     test_msg.input_dim.append(1)
-    test_msg.input_dim.append(3)
+    test_msg.input_dim.append(6)
     test_msg.input_dim.append(in_h)
     test_msg.input_dim.append(in_w)
     # Set BN layers to INFERENCE so they use the new stat blobs
@@ -166,7 +156,7 @@ if __name__ == '__main__':
     caffe.set_mode_gpu()
     p = make_parser()
     args = p.parse_args()
-
+ 
     # build and save testable net
     if not os.path.exists(args.out_dir):
         os.makedirs(args.out_dir)
@@ -180,21 +170,16 @@ if __name__ == '__main__':
 
     # use testable net to calculate BN layer stats
     print "Calculate BN stats..."
-    train_ims, train_labs = extract_dataset(testable_msg)
-    train_size = len(train_ims)
-    minibatch_size = testable_msg.layer[0].dense_image_data_param.batch_size
+
+    train_size = 5011                                                               # Write you training dataset size here
+    minibatch_size = 4                                                              #  Write the minibatch size used in training
     num_iterations = train_size // minibatch_size + train_size % minibatch_size
     in_h, in_w =(360, 480)
     test_net, test_msg = make_test_files(BN_calc_path, args.weights, num_iterations,
                                          in_h, in_w)
     
-    # save deploy prototxt
-    #print "Saving deployment prototext file..."
-    #test_path = os.path.join(args.out_dir, "deploy.prototxt")
-    #with open(test_path, 'w') as f:
-    #    f.write(text_format.MessageToString(test_msg))
     
     print "Saving test net weights..."
-    test_net.save(os.path.join(args.out_dir, "test_weights.caffemodel"))
+    test_net.save(os.path.join(args.out_dir, "segnet_Depth_weights.caffemodel"))
     print "done"
 

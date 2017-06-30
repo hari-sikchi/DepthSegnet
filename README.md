@@ -1,6 +1,8 @@
 # Depth-Segnet
+  
 
-## Segnet using RGBD images
+
+## Segnet using RGB-D images
 
 > This is a example of segmentation done using Depth as an additional parameter.  
 > Depth is converted into three fields : horizontal disparity, height above ground, and the angle the pixel’s local surface  
@@ -13,15 +15,29 @@ normal makes with the inferred gravity direction.
 > This network takes as input a RGB+HHA image and starts training  
 > Script to make a lmdb from RGB + HHA + Segmented mask file is provided  
 > You can also download the converted lmdb from:  
-> Data(RGB+HHA+ Segmented Masks) https://drive.google.com/drive/folders/0B9Zck1VQgjZObG8ySHBuR2JieDQ?usp=sharing  
+> Data(RGB+HHA+ Segmented Masks)[link](https://drive.google.com/open?id=0B9Zck1VQgjZOXzh2RXdsMFVLV1E)    
 > The modified prototxts are included in models as (segnet_depth)  
 > NYUdv2 dataset was used for training  
 > Follow the rest of instructions from  original Segnet.
+  
+  
 
+> Modified scripts can be found in datatools folder.    
+
+### Examples
+
+> Segmentation results in cluttered scenes from NYUDv2 dataset.  
+![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/cluttered_segmentation1.png)
+>----------------------------------------------------------------------------------------------      
+![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation2.png)    
+>----------------------------------------------------------------------------------------------      
+![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation3.png)    
 
 ### References
 
 > SegNet:  http://mi.eng.cam.ac.uk/projects/segnet/tutorial.html  
+
+
 
 
 
