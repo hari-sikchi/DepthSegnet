@@ -33,6 +33,8 @@ normal makes with the inferred gravity direction.
 >----------------------------------------------------------------------------------------------      
 ![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation3.png)    
 
+
+> Final trained weights can be found here. [link](https://drive.google.com/open?id=0B9Zck1VQgjZObzJVTkVpYVZ6bVk)
 ### References
 
 > SegNet:  http://mi.eng.cam.ac.uk/projects/segnet/tutorial.html  
