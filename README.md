@@ -26,7 +26,9 @@ normal makes with the inferred gravity direction.
 
 ### Examples
 
-> Segmentation results in cluttered scenes from NYUDv2 dataset.  
+> Segmentation results in cluttered scenes from NYUDv2 dataset [Added Filter output visualization].
+![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/Filter-visualization.png)
+>----------------------------------------------------------------------------------------------      
 ![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/cluttered_segmentation1.png)
 >----------------------------------------------------------------------------------------------      
 ![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation2.png)    
