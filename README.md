@@ -24,16 +24,20 @@ normal makes with the inferred gravity direction.
 
 > Modified scripts can be found in datatools folder.    
 
+## Setup
+
+1. Clone this repository: `git clone https://github.com/hari-sikchi/DepthSegnet.git`    
+2. Initialize all submodules: `git submodule update --init --recursive`  
+3. Download all the data from the link given below or create your own data in the format:  
+       Data/data_lmdb(Containing images of 6 channel)  
+       Data/labels(Containing segmentation masks for each channel)  
+
 ### Examples
 
 > Segmentation results in cluttered scenes from NYUDv2 dataset [Added Filter output visualization].
 ![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/Filtervisualization.png)
 >----------------------------------------------------------------------------------------------      
-![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/cluttered_segmentation1.png)
->----------------------------------------------------------------------------------------------      
-![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation2.png)    
->----------------------------------------------------------------------------------------------      
-![alt text](https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation3.png)    
+<img src="https://github.com/hari-sikchi/DepthSegnet/blob/master/cluttered_segmentation1.png" width="288"> <img src="https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation2.png" width="288"> <img src="https://github.com/hari-sikchi/DepthSegnet/blob/master/clutteredsegmentation3.png" width="288">   
 
 
 > Final trained weights can be found here. [link](https://drive.google.com/open?id=0B9Zck1VQgjZObzJVTkVpYVZ6bVk)
