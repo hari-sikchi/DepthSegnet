@@ -2,7 +2,7 @@
   
 
 
-## Segnet using RGB-D images
+## Encoder-Decoder semantic segmentation with depth fusion using RGB-D images
 
 > Segmentation done using Depth as an additional parameter.  
 > Depth is converted into three fields : horizontal disparity, height above ground, and the angle the pixel’s local surface  
